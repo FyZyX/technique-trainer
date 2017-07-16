@@ -26,7 +26,7 @@
 function hardHand(pHand, dHand){
     var move = hardTable[(17 - pHand)];
     var dealer = move[1];
-    var result = dealer[dHand - 2]
-    return result;
+    return dealer[dHand - 2];
+
 }
 console.log(hardHand(15,6)); //(val of player hand,val of healer hand)
