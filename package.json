@@ -1,13 +1,14 @@
 {
-  "name"         : "technique_trainer",
-  "version"      : "0.0.1",
-  "description"  : "Suite of games that demonstrate optimal play",
-  "author"       : "Lucas Lofaro",
-  "dependencies" : {
-    "express"    : "latest",
-    "request"    : "latest",
-    "cheerio"    : "latest"
-    },
+  "name": "technique_trainer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.10"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

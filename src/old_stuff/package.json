@@ -1,0 +1,11 @@
+{
+  "name"         : "technique_trainer",
+  "version"      : "0.0.1",
+  "description"  : "Suite of games that demonstrate optimal play",
+  "author"       : "Lucas Lofaro",
+  "dependencies" : {
+    "express"    : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest"
+    }
+}
