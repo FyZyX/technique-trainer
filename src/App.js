@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Card from './Card'
+import Hand from './Hand'
 import './App.css';
 
 class App extends Component {
@@ -14,8 +14,8 @@ class App extends Component {
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
-                <Card rank="a" suit="s"/>
-                <Card rank="q" suit="h"/>
+                <Hand playerHand={['k', '8']}/>
+                <Hand playerHand={['6', '9']}/>
             </div>
         );
     }
