@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Hand from './Hand'
-import './App.css';
+import BlackjackGame from './BlackjackGame'
+import './stylesheets/App.css';
 
 class App extends Component {
     render() {
@@ -14,8 +14,7 @@ class App extends Component {
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
-                <Hand playerHand={['k', '8']}/>
-                <Hand playerHand={['6', '9']}/>
+                <BlackjackGame/>
             </div>
         );
     }

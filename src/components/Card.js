@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './stylesheets/Card.css';
 
 const rankToName = {
     a: 'ace',
@@ -14,20 +15,34 @@ const suitToName = {
     s: 'spades'
 };
 
+const suits = Object.keys(suitToName);
+
 class Card extends Component {
-    suit = Card.chooseSuit();
+    static chooseSuit() {
+        return suits[Math.floor(Math.random() * suits.length)];
+    }
+
+    getValue() {
+        if (/^x$/) {
+            return 0;
+        } else if (/^a$/i.test(this.props.rank)) {
+            return 1;
+        } else if (/^[jqk]$/i.test(this.props.rank)) {
+            return 10;
+        } else {
+            return parseInt(this.props.rank, 10);
+        }
+    }
 
     cardName() {
+        if (/^x$/i.test(this.props.rank)) {
+            return 'bicycle_rider_back'
+        }
         let isAce = /^a$/i.test(this.props.rank);
         let isCourt = /^[jqk]$/i.test(this.props.rank);
         let rank_name = (isAce || isCourt) ? rankToName[this.props.rank] : this.props.rank;
-        let suit_name = suitToName[this.suit] + (isCourt ? '2' : '');
+        let suit_name = suitToName[this.props.suit] + (isCourt ? '2' : '');
         return rank_name + '_of_' + suit_name
-    }
-
-    static chooseSuit() {
-        let suits = Object.keys(suitToName);
-        return suits[Math.floor(Math.random()*suits.length)];
     }
 
     render() {
