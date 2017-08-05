@@ -1,8 +1,8 @@
 /**
  * Created by Brandon Brown on 7/16/2017.
  */
-var hardTable = require('./hardTable');
-var softTable = require('./softTable');
+var hardTable = require('./../basic-strategy-tables/hardTable');
+var softTable = require('./../basic-strategy-tables/softTable');
 
 /**
  * A function that when given the value of the players current hand and the value of the dealers current hand returns the move to be made.

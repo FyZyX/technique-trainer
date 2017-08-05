@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './stylesheets/Card.css';
+import { randomItem } from '../utils'
+import '../stylesheets/Card.css';
 
 const rankToName = {
     a: 'ace',
@@ -19,14 +20,18 @@ const suits = Object.keys(suitToName);
 
 class Card extends Component {
     static chooseSuit() {
-        return suits[Math.floor(Math.random() * suits.length)];
+        return randomItem(suits);
+    }
+
+    static chooseRank() {
+        return randomItem(['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k']);
     }
 
     getValue() {
-        if (/^x$/) {
+        if (/^x$/.test(this.props.rank)) {
             return 0;
         } else if (/^a$/i.test(this.props.rank)) {
-            return 1;
+            return 11;
         } else if (/^[jqk]$/i.test(this.props.rank)) {
             return 10;
         } else {
@@ -48,7 +53,7 @@ class Card extends Component {
     render() {
         return (
             <div className="Card">
-                <img src={require('./playing-cards/png/' + this.cardName() + '.png')}
+                <img src={require('../playing-cards/png/' + this.cardName() + '.png')}
                      className="Card-image"
                      alt={this.cardName().split('_').join(' ')}
                 />

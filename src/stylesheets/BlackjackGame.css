@@ -1,0 +1,8 @@
+.BlackjackGame {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: gold;
+    background-color: seagreen;
+    padding: 10px;
+}
