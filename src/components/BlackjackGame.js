@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Card from "./Card";
 import { Hand, DealerHand } from './Hand'
 import splitTable from '../basic-strategy-tables/splitTable'
 import softTable from '../basic-strategy-tables/softTable'
@@ -85,7 +84,7 @@ class BlackjackGame extends Component {
 
         let dealerUpCard = valueOfCard(this.state.dealerUpCard);
         // TODO: Move this addition logic into a method on Hand
-        let playerHandTotal = valueOfCard(this.state.playerCards[0]) + Card.valueOf(this.state.playerCards[1]);
+        let playerHandTotal = valueOfCard(this.state.playerCards[0]) + valueOfCard(this.state.playerCards[1]);
         console.log(dealerUpCard);
         console.log(playerHandTotal);
 

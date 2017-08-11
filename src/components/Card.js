@@ -32,20 +32,16 @@ class Card extends Component {
         return randomItem(['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k']);
     }
 
-    static valueOf(rank) {
-        if (/^x$/.test(rank)) {
+    getValue() {
+        if (/^x$/.test(this.props.rank)) {
             return 0;
-        } else if (/^a$/i.test(rank)) {
+        } else if (/^a$/i.test(this.props.rank)) {
             return 11;
-        } else if (/^[jqk]$/i.test(rank)) {
+        } else if (/^[jqk]$/i.test(this.props.rank)) {
             return 10;
         } else {
-            return parseInt(rank, 10);
+            return parseInt(this.props.rank, 10);
         }
-    }
-
-    getValue() {
-        Card.valueOf(this.props.rank)
     }
 
     cardName() {
