@@ -177,11 +177,13 @@ class BlackjackGame extends Component {
                 <div>
                     <DealerHand ref="dealerHand"
                                 cards={[this.state.dealerUpCard, "x"]}
+                                type="dealer"
                                 callbackParent={this.onCardSelected.bind(this)}
                     />
                     <div className="spacer"/>
                     <Hand ref="playerHand"
                           cards={[this.state.playerCards[0], this.state.playerCards[1]]}
+                          type="player"
                           callbackParent={this.onCardSelected.bind(this)}
                     />
                 </div>
