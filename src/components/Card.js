@@ -19,6 +19,11 @@ const suitToName = {
 const suits = Object.keys(suitToName);
 
 class Card extends Component {
+    constructor(props) {
+        super(props);
+        this.suit = Card.chooseSuit()
+    }
+
     static chooseSuit() {
         return randomItem(suits);
     }
@@ -27,16 +32,20 @@ class Card extends Component {
         return randomItem(['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k']);
     }
 
-    getValue() {
-        if (/^x$/.test(this.props.rank)) {
+    static valueOf(rank) {
+        if (/^x$/.test(rank)) {
             return 0;
-        } else if (/^a$/i.test(this.props.rank)) {
+        } else if (/^a$/i.test(rank)) {
             return 11;
-        } else if (/^[jqk]$/i.test(this.props.rank)) {
+        } else if (/^[jqk]$/i.test(rank)) {
             return 10;
         } else {
-            return parseInt(this.props.rank, 10);
+            return parseInt(rank, 10);
         }
+    }
+
+    getValue() {
+        Card.valueOf(this.props.rank)
     }
 
     cardName() {
@@ -46,21 +55,18 @@ class Card extends Component {
         let isAce = /^a$/i.test(this.props.rank);
         let isCourt = /^[jqk]$/i.test(this.props.rank);
         let rank_name = (isAce || isCourt) ? rankToName[this.props.rank] : this.props.rank;
-        let suit_name = suitToName[this.props.suit] + (isCourt ? '2' : '');
+        let suit_name = suitToName[this.suit] + (isCourt ? '2' : '');
         return rank_name + '_of_' + suit_name
     }
 
     render() {
         return (
-            <div className="Card">
-                <img src={require('../playing-cards/png/' + this.cardName() + '.png')}
-                     className="Card-image"
-                     alt={this.cardName().split('_').join(' ')}
-                />
-            </div>
+            <img src={require('../playing-cards/png/' + this.cardName() + '.png')}
+                 className="Card-image"
+                 alt={this.cardName().split('_').join(' ')}
+            />
         );
     }
 }
 
 export default Card;
-

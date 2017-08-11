@@ -1,0 +1,42 @@
+.Card-selector tbody {
+    height: 200px;
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    background-color: dodgerblue;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.Card-selector tr {
+    flex: 1;
+    border-bottom: 1px solid white;
+    display: flex;
+}
+
+.Card-selector tr:last-child {
+    border-bottom: none;
+}
+
+.Card-rank {
+    border-right: 1px solid white;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Card-rank:last-child {
+    border-right: none;
+}
+
+.Card-rank button {
+    flex: 1;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    color: white;
+}
