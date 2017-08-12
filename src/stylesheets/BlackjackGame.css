@@ -7,6 +7,13 @@
     padding: 10px;
 }
 
+.BlackjackGame .advice button {
+    font-size: 1.2em;
+    background-color: royalblue;
+    color: lightgrey;
+    border: 2px solid lightgrey;
+}
+
 .spacer {
     height: 20vh;
 }

@@ -142,6 +142,13 @@ class BlackjackGame extends Component {
         }
     }
 
+    onReset() {
+      this.setState({
+        dealerUpCard: null,
+        playerCards: [null, null]
+      })
+    }
+
     /**
      * Renders the best strategy if all of the cards are selected,
      * otherwise prompts the user to select cards
@@ -163,9 +170,10 @@ class BlackjackGame extends Component {
 
         // TODO: Create an Advice component to store this markup
         return (
-            <div>
+            <div className="advice">
                 <p>In this situation, it's best to</p>
                 <h3>{bestOption.toUpperCase()}</h3>
+                <button onClick={this.onReset.bind(this)}>Reset</button>
             </div>
         )
     }
