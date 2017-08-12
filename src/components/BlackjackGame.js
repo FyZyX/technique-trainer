@@ -142,6 +142,9 @@ class BlackjackGame extends Component {
         }
     }
 
+    /**
+     * Resets the state of the game so that all cards are not selected
+     */
     onReset() {
       this.setState({
         dealerUpCard: null,
