@@ -1,12 +1,18 @@
-.Card-selector tbody {
+.Card-selector {
+    display: flex;
+    padding: 5px;
     height: 200px;
-    width: 145px;
+    width: 143px;
+}
+
+.Card-selector tbody {
     display: flex;
     flex-direction: column;
     background-color: royalblue;
     color: white;
     border: 1px solid white;
     border-radius: 5px;
+    flex: 1;
 }
 
 .Card-selector tr {
